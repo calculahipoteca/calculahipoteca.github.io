@@ -277,7 +277,6 @@
   $('btnFija').onclick = () => setMode('fija');
   $('toggleTabla').onclick = () => { monthly = !monthly; $('toggleTabla').textContent = monthly ? 'Ver por años' : 'Ver por meses'; $('colPeriodo').textContent = monthly ? 'Mes' : 'Año'; calc(); };
   document.querySelectorAll('input').forEach(el => el.addEventListener('input', calc));
-  $('yr').textContent = new Date().getFullYear();
   calc();
 })();
 </script>
