@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Calculadora de hipoteca 2026: cuota, intereses y amortización</title>
+<meta name="description" content="Calcula gratis la cuota de tu hipoteca fija o variable con el Euríbor actualizado: intereses totales y tabla de amortización año a año.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://calculahipoteca.github.io/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0f3d2e">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="CalculaHipoteca">
+<meta property="og:title" content="Calculadora de hipoteca 2026 — cuota, intereses y amortización">
+<meta property="og:description" content="Calcula gratis la cuota de tu hipoteca fija o variable con el Euríbor actualizado: intereses totales y tabla de amortización año a año.">
+<meta property="og:url" content="https://calculahipoteca.github.io/">
+<meta property="og:image" content="https://calculahipoteca.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<!--
+  GOOGLE ADSENSE: cuando te aprueben, descomenta y pon tu ID de editor (ca-pub-...).
+  En España es obligatorio un banner de consentimiento certificado (AdSense > Privacidad y mensajes > RGPD).
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebSite",
+ "name": "CalculaHipoteca",
+ "url": "https://calculahipoteca.github.io/",
+ "inLanguage": "es-ES"
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "Calculadora de hipoteca",
+ "url": "https://calculahipoteca.github.io/",
+ "description": "Calcula la cuota mensual de una hipoteca fija o variable.",
+ "applicationCategory": "FinanceApplication",
+ "operatingSystem": "Cualquiera",
+ "inLanguage": "es-ES",
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "EUR"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {"@type": "Question", "name": "¿Cómo se calcula la cuota de una hipoteca?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Con el sistema de amortización francés, el más usado en España: cuota = P · r / (1 − (1 + r)^−n), donde P es el capital prestado, r el interés mensual (TIN anual / 12) y n el número de cuotas. La cuota es igual cada mes; al principio pagas sobre todo intereses y al final sobre todo capital."}},
+    {"@type": "Question", "name": "¿Cuánto me prestará el banco para comprar una vivienda?",
+     "acceptedAnswer": {"@type": "Answer", "text": "Lo habitual es que el banco financie como máximo el 80 % del precio de tasación o de compra (el menor) en primera vivienda, y que la cuota no supere el 30–35 % de los ingresos netos del hogar. Además necesitarás ahorros para los gastos de compra, que suelen rondar el 10–12 % del precio."}},
+    {"@type": "Question", "name": "¿Es mejor una hipoteca fija o variable?",
+     "acceptedAnswer": {"@type": "Answer", "text": "La fija te da una cuota que no cambia nunca, a cambio de un tipo inicial normalmente más alto. La variable se revisa cada 6 o 12 meses según el Euríbor más un diferencial: puede abaratarse si el Euríbor baja, pero también encarecerse. Depende de tu margen de ahorro y de cuánto riesgo aceptes."}},
+    {"@type": "Question", "name": "¿Qué diferencia hay entre TIN y TAE?",
+     "acceptedAnswer": {"@type": "Answer", "text": "El TIN es el interés puro que se aplica al préstamo y es el que determina la cuota. La TAE incluye además comisiones y algunos gastos, y sirve para comparar ofertas de distintos bancos. Esta calculadora usa el TIN."}}
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="./">Calcula<span>Hipoteca</span></a>
+    <nav aria-label="Calculadoras"><a href="./" aria-current="page">Cuota hipoteca</a><a href="cuanto-me-presta-el-banco.html">Cuánto me presta</a><a href="gastos-compra-vivienda.html">Gastos de compra</a><a href="amortizacion-anticipada.html">Amortizar</a></nav>
+  </div>
+</header>
+<main class="wrap" id="contenido">
+
+
+  <section class="hero">
+    <h1>Calculadora de hipoteca 2026</h1>
+    <p class="lead">Calcula en segundos tu cuota mensual, cuántos intereses vas a pagar y cómo baja tu deuda año a año. Sirve para hipotecas a tipo fijo y variable (Euríbor + diferencial).</p>
+  <p class="updated">Actualizada en noviembre de 2026 con el Euríbor de octubre.</p>
+  </section>
+
+  <div class="grid">
+    <section class="card" aria-labelledby="datos">
+      <h2 id="datos">Tus datos</h2>
+
+      <div class="field">
+        <label for="precio">Precio de la vivienda</label>
+        <div class="inbox"><input id="precio" type="number" inputmode="numeric" min="0" step="1000" value="250000"><span>€</span></div>
+      </div>
+
+      <div class="field">
+        <label for="ahorro">Ahorro que aportas <output id="pctAhorro"></output></label>
+        <div class="inbox"><input id="ahorro" type="number" inputmode="numeric" min="0" step="1000" value="50000"><span>€</span></div>
+        <div class="warn" id="warnLtv">Los bancos suelen financiar como máximo el 80 % del precio. Con este ahorro estarías pidiendo más.</div>
+      </div>
+
+      <div class="field">
+        <label for="plazo">Plazo <output id="plazoOut"></output></label>
+        <input id="plazo" type="range" min="5" max="40" step="1" value="30" aria-describedby="plazoHint">
+        <div class="hint" id="plazoHint">Entre 5 y 40 años. Lo habitual en España es 25–30.</div>
+      </div>
+
+      <div class="seg" role="group" aria-label="Tipo de hipoteca">
+        <button type="button" id="btnVar" aria-pressed="true">Variable</button>
+        <button type="button" id="btnFija" aria-pressed="false">Fija</button>
+      </div>
+
+      <div id="boxVar" class="row2">
+        <div class="field">
+          <label for="euribor">Euríbor</label>
+          <div class="inbox"><input id="euribor" type="number" inputmode="decimal" step="0.01" value="3.24"><span>%</span></div>
+        </div>
+        <div class="field">
+          <label for="dif">Diferencial</label>
+          <div class="inbox"><input id="dif" type="number" inputmode="decimal" step="0.01" min="0" value="0.75"><span>%</span></div>
+        </div>
+      </div>
+      <p class="hint" id="eurHint" style="margin-top:-6px">Euríbor a 12 meses: media de octubre de 2026 = 3,239 %. Cambia el valor para simular subidas o bajadas.</p>
+
+      <div id="boxFija" class="field" hidden>
+        <label for="tin">Tipo de interés (TIN)</label>
+        <div class="inbox"><input id="tin" type="number" inputmode="decimal" step="0.01" min="0" value="3.00"><span>%</span></div>
+        <div class="hint">Pon el TIN de la oferta que te ha hecho el banco.</div>
+      </div>
+
+      <div class="field">
+        <label for="ingresos">Ingresos netos mensuales del hogar <span style="font-weight:400;color:var(--muted)">(opcional)</span></label>
+        <div class="inbox"><input id="ingresos" type="number" inputmode="numeric" min="0" step="100" placeholder="Ej.: 3200"><span>€</span></div>
+      </div>
+    </section>
+
+    <section class="card result" aria-live="polite" aria-labelledby="res">
+      <h2 id="res">Tu cuota mensual</h2>
+      <div class="big"><span id="cuota">—</span> <small>/ mes</small></div>
+      <div class="hint" style="color:#cfe3da" id="tipoAplicado"></div>
+
+      <div class="stats">
+        <div class="stat"><b id="prestamo">—</b><span>Importe del préstamo</span></div>
+        <div class="stat"><b id="intereses">—</b><span>Intereses totales</span></div>
+        <div class="stat"><b id="total">—</b><span>Total a devolver</span></div>
+        <div class="stat"><b id="gastos">—</b><span>Gastos de compra aprox. (≈10 %)</span></div>
+      </div>
+
+      <div class="bar" aria-hidden="true"><i class="cap" id="barCap"></i><i class="int" id="barInt"></i></div>
+      <div class="legend"><span><em style="background:#7fd1ad"></em>Capital</span><span><em style="background:var(--accent)"></em>Intereses</span></div>
+
+      <div class="effort" id="effort" hidden></div>
+    </section>
+  </div>
+
+  <!-- ANUNCIO 1 (debajo de la calculadora). Sustituye el contenido por tu bloque de AdSense:
+  <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="1111111111" data-ad-format="auto" data-full-width-responsive="true"></ins>
+  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script> -->
+  <div class="ad-slot" aria-hidden="true">Publicidad</div>
+
+  <section class="card" aria-labelledby="amort">
+    <div class="tbl-head">
+      <h2 id="amort">Tabla de amortización</h2>
+      <button class="btn" id="toggleTabla" type="button">Ver por meses</button>
+    </div>
+    <div class="tablebox">
+      <table>
+        <thead><tr><th id="colPeriodo">Año</th><th>Cuota</th><th>Intereses</th><th>Capital</th><th>Pendiente</th></tr></thead>
+        <tbody id="tabla"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <article>
+    <h2 id="como-se-calcula">Cómo se calcula la cuota de una hipoteca</h2>
+    <p>En España casi todas las hipotecas usan el <strong>sistema de amortización francés</strong>: pagas la misma cuota todos los meses (mientras no cambie el tipo de interés). Esa cuota se reparte entre intereses y devolución del capital. Al principio la mayor parte son intereses; con los años va pesando más el capital.</p>
+    <div class="formula">Cuota = P × r ÷ (1 − (1 + r)<sup>−n</sup>)</div>
+    <p><strong>P</strong> es el dinero que te presta el banco, <strong>r</strong> el interés mensual (el TIN anual dividido entre 12) y <strong>n</strong> el número total de cuotas (años × 12).</p>
+    <h3>Ejemplo</h3>
+    <p>Por 200.000 € a 30 años con un TIN del 3,99 % (Euríbor del 3,24 % + diferencial del 0,75 %), la cuota sale a unos <strong>954 € al mes</strong>. Al terminar habrás pagado unos 143.000 € de intereses.</p>
+
+    <!-- ANUNCIO 2 (dentro del artículo) -->
+    <div class="ad-slot" aria-hidden="true">Publicidad</div>
+
+    <h2>Hipoteca fija o variable: cuál te conviene</h2>
+    <p>Con una <strong>hipoteca fija</strong> la cuota no cambia nunca. Sabes exactamente lo que pagarás durante toda la vida del préstamo, a cambio de un tipo inicial normalmente más alto.</p>
+    <p>En una <strong>hipoteca variable</strong>, el interés se revisa cada 6 o 12 meses: es el Euríbor más un diferencial fijo que pacta el banco. Si el Euríbor baja, pagas menos; si sube, pagas más. Usa la calculadora para cambiar el Euríbor y ver cómo cambiaría tu cuota en cada caso.</p>
+    <p>También existen las <strong>hipotecas mixtas</strong>: tipo fijo durante los primeros años (normalmente 5–15) y variable después.</p>
+
+    <h2>Cuánto dinero necesitas ahorrado</h2>
+    <p>Los bancos suelen financiar hasta el <strong>80 % del precio</strong> en primera vivienda. Necesitarás el 20 % restante más los <strong>gastos de compra</strong>: el impuesto (ITP si es de segunda mano o IVA si es nueva), notaría, registro y gestoría. En total suele rondar entre el 10 % y el 12 % del precio, según la comunidad autónoma. Por eso, para comprar una vivienda de 250.000 € conviene tener unos 75.000–80.000 € ahorrados. Calcula el importe exacto de tu comunidad con la <a href="gastos-compra-vivienda.html">calculadora de gastos de compra</a>.</p>
+    <p>Los bancos también miran la <strong>tasa de esfuerzo</strong>: la cuota no debería superar el 30–35 % de los ingresos netos del hogar. Si rellenas tus ingresos en la calculadora, te dirá en qué punto estás. Y si quieres saber el precio máximo que puedes permitirte, usa la calculadora de <a href="cuanto-me-presta-el-banco.html">cuánto me presta el banco</a>.</p>
+
+    <h2 id="preguntas">Preguntas frecuentes</h2>
+    <details><summary>¿Qué diferencia hay entre TIN y TAE?</summary><p>El TIN es el interés puro del préstamo y el que determina la cuota. La TAE incluye además comisiones y algunos gastos, así que sirve para comparar ofertas de distintos bancos. Esta calculadora usa el TIN.</p></details>
+    <details><summary>¿Me conviene un plazo más corto?</summary><p>Un plazo más corto sube la cuota, pero reduce mucho los intereses totales. Prueba a mover el plazo de 30 a 25 años: normalmente pagas algo más al mes y te ahorras decenas de miles de euros en total.</p></details>
+    <details><summary>¿Qué pasa si amortizo de forma anticipada?</summary><p>Puedes reducir la cuota o el plazo. Reducir el plazo suele ahorrar más intereses: compáralo con nuestra <a href="amortizacion-anticipada.html">calculadora de amortización anticipada</a>. Ten en cuenta que el banco puede cobrar una pequeña comisión, que la ley limita.</p></details>
+    <details><summary>¿Este cálculo es exacto?</summary><p>Es una estimación orientativa. Tu oferta real depende del banco, de tu perfil y de productos vinculados (seguros, nómina…). En las hipotecas variables, el primer año suele ir a un tipo fijo distinto, y después la cuota se recalcula en cada revisión.</p></details>
+  </article>
+<section class="related" aria-labelledby="rel"><h2 id="rel">Otras calculadoras útiles</h2><div class="tools"><a href="cuanto-me-presta-el-banco.html"><b>¿Cuánto me presta el banco?</b><span>El precio máximo de vivienda según tus ingresos y ahorros.</span></a><a href="gastos-compra-vivienda.html"><b>Gastos de compra de vivienda</b><span>ITP o IVA por comunidad autónoma, notaría y registro.</span></a><a href="amortizacion-anticipada.html"><b>Amortización anticipada</b><span>¿Reducir cuota o plazo? Calcula cuánto ahorras.</span></a></div></section>
+<script>
+(function(){
+  const $ = id => document.getElementById(id);
+  const eur = new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR',maximumFractionDigits:0,useGrouping:'always'});
+  const eur2 = new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR',minimumFractionDigits:2,maximumFractionDigits:2,useGrouping:'always'});
+  const pct = n => n.toLocaleString('es-ES',{maximumFractionDigits:2}) + ' %';
+  let mode = 'var', monthly = false;
+
+  function num(id){ const v = parseFloat(String($(id).value).replace(',','.')); return isFinite(v) ? v : 0; }
+
+  function cuotaFrancesa(P, tinAnual, n){
+    const r = tinAnual/100/12;
+    if (r === 0) return P/n;
+    return P * r / (1 - Math.pow(1+r, -n));
+  }
+
+  function calc(){
+    const precio = Math.max(0, num('precio'));
+    const ahorro = Math.max(0, num('ahorro'));
+    const años = parseInt($('plazo').value,10);
+    const n = años*12;
+    const tin = mode === 'var' ? num('euribor') + num('dif') : num('tin');
+    const P = Math.max(0, precio - ahorro);
+
+    $('plazoOut').textContent = años + ' años';
+    $('pctAhorro').textContent = precio ? Math.round(ahorro/precio*100) + ' %' : '';
+    $('warnLtv').style.display = precio && P/precio > 0.8 ? 'block' : 'none';
+
+    if (!P || !n){ ['cuota','prestamo','intereses','total'].forEach(i=>$(i).textContent='—'); $('tabla').innerHTML=''; $('effort').hidden = true; return; }
+
+    const c = cuotaFrancesa(P, tin, n);
+    const total = c*n, inter = total - P;
+
+    $('cuota').textContent = eur2.format(c);
+    $('tipoAplicado').textContent = 'Tipo aplicado: ' + pct(tin) + (mode==='var' ? ' (Euríbor + diferencial)' : ' fijo');
+    $('prestamo').textContent = eur.format(P);
+    $('intereses').textContent = eur.format(inter);
+    $('total').textContent = eur.format(total);
+    $('gastos').textContent = eur.format(precio*0.10);
+    $('barCap').style.width = (P/total*100)+'%';
+    $('barInt').style.width = (inter/total*100)+'%';
+
+    const ing = num('ingresos'), eff = $('effort');
+    if (ing > 0){
+      const e = c/ing*100;
+      eff.hidden = false;
+      eff.textContent = 'Tasa de esfuerzo: ' + e.toLocaleString('es-ES',{maximumFractionDigits:1}) + ' % de tus ingresos. ' +
+        (e <= 30 ? 'Dentro de lo que suelen aceptar los bancos.' : e <= 35 ? 'En el límite: algunos bancos pueden pedir más garantías.' : 'Por encima del 35 %: es probable que el banco lo considere arriesgado.');
+    } else eff.hidden = true;
+
+    // Tabla de amortización
+    const r = tin/100/12; let pend = P, rows = '', aC=0, aI=0, aK=0;
+    for (let m=1; m<=n; m++){
+      const i = pend*r, k = c - i; pend = Math.max(0, pend - k);
+      if (monthly){
+        rows += `<tr><td>${m}</td><td>${eur2.format(c)}</td><td>${eur2.format(i)}</td><td>${eur2.format(k)}</td><td>${eur.format(pend)}</td></tr>`;
+      } else {
+        aC+=c; aI+=i; aK+=k;
+        if (m%12===0){ rows += `<tr><td>${m/12}</td><td>${eur.format(aC)}</td><td>${eur.format(aI)}</td><td>${eur.format(aK)}</td><td>${eur.format(pend)}</td></tr>`; aC=aI=aK=0; }
+      }
+    }
+    $('tabla').innerHTML = rows;
+  }
+
+  function setMode(m){
+    mode = m;
+    $('btnVar').setAttribute('aria-pressed', m==='var');
+    $('btnFija').setAttribute('aria-pressed', m==='fija');
+    $('boxVar').hidden = m!=='var'; $('eurHint').hidden = m!=='var';
+    $('boxFija').hidden = m!=='fija';
+    calc();
+  }
+
+  $('btnVar').onclick = () => setMode('var');
+  $('btnFija').onclick = () => setMode('fija');
+  $('toggleTabla').onclick = () => { monthly = !monthly; $('toggleTabla').textContent = monthly ? 'Ver por años' : 'Ver por meses'; $('colPeriodo').textContent = monthly ? 'Mes' : 'Año'; calc(); };
+  document.querySelectorAll('input').forEach(el => el.addEventListener('input', calc));
+  $('yr').textContent = new Date().getFullYear();
+  calc();
+})();
+</script>
+</main>
+<footer>
+  <div class="wrap">
+    <p><a href="./">Calculadora de hipoteca</a><a href="cuanto-me-presta-el-banco.html">¿Cuánto me presta el banco?</a><a href="gastos-compra-vivienda.html">Gastos de compra de vivienda</a><a href="amortizacion-anticipada.html">Amortización anticipada</a></p>
+    <p><a href="sobre-nosotros.html">Sobre nosotros</a><a href="contacto.html">Contacto</a><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad y cookies</a></p>
+    <p>Los resultados son orientativos y no constituyen una oferta ni asesoramiento financiero. © 2026 CalculaHipoteca</p>
+  </div>
+</footer>
+</body>
+</html>

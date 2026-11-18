@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amortización anticipada: ¿reducir cuota o plazo? Calculadora</title>
+<meta name="description" content="¿Te conviene reducir cuota o plazo al amortizar tu hipoteca? Calcula cuánto ahorras en intereses, la nueva cuota y los años que te quitas, con comisiones.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://calculahipoteca.github.io/amortizacion-anticipada.html">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#0f3d2e">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="CalculaHipoteca">
+<meta property="og:title" content="Amortización anticipada: ¿reducir cuota o plazo? Calculadora">
+<meta property="og:description" content="¿Te conviene reducir cuota o plazo al amortizar tu hipoteca? Calcula cuánto ahorras en intereses, la nueva cuota y los años que te quitas, con comisiones.">
+<meta property="og:url" content="https://calculahipoteca.github.io/amortizacion-anticipada.html">
+<meta property="og:image" content="https://calculahipoteca.github.io/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="styles.css">
+<!--
+  GOOGLE ADSENSE: cuando te aprueben, descomenta y pon tu ID de editor (ca-pub-...).
+  En España es obligatorio un banner de consentimiento certificado (AdSense > Privacidad y mensajes > RGPD).
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+-->
+
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "WebApplication",
+ "name": "Calculadora de amortización anticipada",
+ "url": "https://calculahipoteca.github.io/amortizacion-anticipada.html",
+ "description": "Compara reducir cuota o plazo al amortizar una hipoteca.",
+ "applicationCategory": "FinanceApplication",
+ "operatingSystem": "Cualquiera",
+ "inLanguage": "es-ES",
+ "offers": {
+  "@type": "Offer",
+  "price": "0",
+  "priceCurrency": "EUR"
+ }
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "FAQPage",
+ "mainEntity": [
+  {
+   "@type": "Question",
+   "name": "¿Es mejor reducir cuota o plazo?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Reducir el plazo casi siempre ahorra más intereses, porque dejas de pagar intereses durante los años que eliminas. Reducir la cuota te da más liquidez cada mes, lo que puede convenirte si tus ingresos son ajustados o si prevés gastos."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "¿Cuánta comisión cobra el banco por amortizar?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "La Ley 5/2019 la limita. En hipotecas variables: como máximo el 0,25 % los 3 primeros años o el 0,15 % los 5 primeros (según contrato) y 0 % después. En hipotecas fijas: como máximo el 2 % los 10 primeros años y el 1,5 % después."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "¿Cuándo conviene amortizar?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Cuanto antes, mejor: en los primeros años de la hipoteca la mayor parte de la cuota son intereses. Aun así, conviene mantener un colchón de emergencia y comparar con lo que rendiría ese dinero invertido."
+   }
+  },
+  {
+   "@type": "Question",
+   "name": "¿Amortizar desgrava en la renta?",
+   "acceptedAnswer": {
+    "@type": "Answer",
+    "text": "Solo si compraste tu vivienda habitual antes del 1 de enero de 2013 y tienes derecho a la deducción por vivienda habitual. En ese caso, las amortizaciones cuentan hasta el límite anual de 9.040 €."
+   }
+  }
+ ]
+}
+</script>
+<script type="application/ld+json">
+{
+ "@context": "https://schema.org",
+ "@type": "BreadcrumbList",
+ "itemListElement": [
+  {
+   "@type": "ListItem",
+   "position": 1,
+   "name": "Inicio",
+   "item": "https://calculahipoteca.github.io/"
+  },
+  {
+   "@type": "ListItem",
+   "position": 2,
+   "name": "Amortización anticipada",
+   "item": "https://calculahipoteca.github.io/amortizacion-anticipada.html"
+  }
+ ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#contenido">Saltar al contenido</a>
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="./">Calcula<span>Hipoteca</span></a>
+    <nav aria-label="Calculadoras"><a href="./">Cuota hipoteca</a><a href="cuanto-me-presta-el-banco.html">Cuánto me presta</a><a href="gastos-compra-vivienda.html">Gastos de compra</a><a href="amortizacion-anticipada.html" aria-current="page">Amortizar</a></nav>
+  </div>
+</header>
+<main class="wrap" id="contenido">
+<nav class="crumbs" aria-label="Migas de pan"><a href="./">Inicio</a> › Amortización anticipada</nav>
+<section class="hero">
+  <h1>Calculadora de amortización anticipada: ¿reducir cuota o plazo?</h1>
+  <p class="lead">Descubre cuánto te ahorras si adelantas dinero a tu hipoteca y qué opción te conviene más: bajar la cuota mensual o acortar los años que te quedan.</p>
+  <p class="updated">Actualizada en noviembre de 2026.</p>
+</section>
+<div class="grid">
+  <section class="card" aria-labelledby="d">
+    <h2 id="d">Tu hipoteca hoy</h2>
+    <div class="field"><label for="deu">Capital pendiente</label>
+      <div class="inbox"><input id="deu" type="number" inputmode="numeric" min="0" step="1000" value="150000"><span>€</span></div>
+      <div class="hint">Lo encontrarás en el recibo de la hipoteca o en la app de tu banco.</div></div>
+    <div class="field"><label for="pla">Años que te quedan <output id="plaO"></output></label>
+      <input id="pla" type="range" min="2" max="40" value="22"></div>
+    <div class="field"><label for="tin">Interés actual (TIN)</label>
+      <div class="inbox"><input id="tin" type="number" inputmode="decimal" step="0.05" min="0" value="3.5"><span>%</span></div></div>
+    <div class="row2">
+      <div class="field"><label for="am">Quieres amortizar</label>
+        <div class="inbox"><input id="am" type="number" inputmode="numeric" min="0" step="500" value="10000"><span>€</span></div></div>
+      <div class="field"><label for="com">Comisión</label>
+        <div class="inbox"><input id="com" type="number" inputmode="decimal" min="0" step="0.05" value="0"><span>%</span></div></div>
+    </div>
+    <p class="hint">Cuota actual: <b id="cAct">—</b></p>
+  </section>
+  <section class="card result" aria-live="polite">
+    <h2>Te conviene</h2>
+    <div class="big" id="win" style="font-size:clamp(1.8rem,4.5vw,2.4rem)">—</div>
+    <div class="hint" id="winTxt"></div>
+    <div class="stats">
+      <div class="stat good"><b id="aP">—</b><span>Ahorro en intereses reduciendo plazo</span></div>
+      <div class="stat"><b id="nP">—</b><span>Nuevo plazo (misma cuota)</span></div>
+      <div class="stat good"><b id="aC">—</b><span>Ahorro en intereses reduciendo cuota</span></div>
+      <div class="stat"><b id="nC">—</b><span>Nueva cuota (mismo plazo)</span></div>
+    </div>
+    <div class="effort" id="msg"></div>
+  </section>
+</div>
+<div class="ad-slot" aria-hidden="true">Publicidad</div>
+<article>
+  <h2>Qué es amortizar anticipadamente una hipoteca</h2>
+  <p>Amortizar anticipadamente es devolver al banco parte del préstamo antes de tiempo. Ese dinero va directo a reducir el capital pendiente, así que a partir de ese momento pagas intereses sobre una deuda menor. Al hacerlo, el banco te dejará elegir entre dos opciones:</p>
+  <h3>Reducir el plazo</h3>
+  <p>Sigues pagando la misma cuota, pero terminas antes. Es la opción que <strong>más intereses ahorra</strong>, porque eliminas por completo los últimos años de pagos.</p>
+  <h3>Reducir la cuota</h3>
+  <p>Mantienes los años que te quedan, pero pagas menos cada mes. Ahorras menos intereses en total, pero ganas <strong>margen en tu presupuesto mensual</strong>.</p>
+  <div class="ad-slot" aria-hidden="true">Publicidad</div>
+  <h2>Comisiones por amortización anticipada</h2>
+  <p>Desde la Ley 5/2019 de crédito inmobiliario, las comisiones tienen un máximo legal. En hipotecas a <strong>tipo variable</strong>, el banco puede cobrar hasta un 0,25 % del capital amortizado durante los 3 primeros años, o hasta un 0,15 % durante los 5 primeros (según lo pactado), y nada después. En hipotecas a <strong>tipo fijo</strong>, hasta un 2 % los 10 primeros años y un 1,5 % el resto. Revisa tu escritura y pon el porcentaje en la calculadora.</p>
+  <p>Si estás pensando en cambiar de hipoteca en lugar de amortizar, calcula primero la nueva cuota con la <a href="./">calculadora de hipoteca</a>.</p>
+  <h2>Preguntas frecuentes</h2>
+  <details><summary>¿Es mejor reducir cuota o plazo?</summary><p>Reducir el plazo casi siempre ahorra más intereses, porque dejas de pagar intereses durante los años que eliminas. Reducir la cuota te da más liquidez cada mes, lo que puede convenirte si tus ingresos son ajustados o si prevés gastos.</p></details>
+<details><summary>¿Cuánta comisión cobra el banco por amortizar?</summary><p>La Ley 5/2019 la limita. En hipotecas variables: como máximo el 0,25 % los 3 primeros años o el 0,15 % los 5 primeros (según contrato) y 0 % después. En hipotecas fijas: como máximo el 2 % los 10 primeros años y el 1,5 % después.</p></details>
+<details><summary>¿Cuándo conviene amortizar?</summary><p>Cuanto antes, mejor: en los primeros años de la hipoteca la mayor parte de la cuota son intereses. Aun así, conviene mantener un colchón de emergencia y comparar con lo que rendiría ese dinero invertido.</p></details>
+<details><summary>¿Amortizar desgrava en la renta?</summary><p>Solo si compraste tu vivienda habitual antes del 1 de enero de 2013 y tienes derecho a la deducción por vivienda habitual. En ese caso, las amortizaciones cuentan hasta el límite anual de 9.040 €.</p></details>
+</article>
+<section class="related" aria-labelledby="rel"><h2 id="rel">Otras calculadoras útiles</h2><div class="tools"><a href="./"><b>Calculadora de hipoteca</b><span>Cuota mensual, intereses y tabla de amortización.</span></a><a href="cuanto-me-presta-el-banco.html"><b>¿Cuánto me presta el banco?</b><span>El precio máximo de vivienda según tus ingresos y ahorros.</span></a><a href="gastos-compra-vivienda.html"><b>Gastos de compra de vivienda</b><span>ITP o IVA por comunidad autónoma, notaría y registro.</span></a></div></section>
+<script>
+(function(){
+const $ = id => document.getElementById(id);
+const eur = new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR',maximumFractionDigits:0,useGrouping:'always'});
+const eur2 = new Intl.NumberFormat('es-ES',{style:'currency',currency:'EUR',minimumFractionDigits:2,maximumFractionDigits:2,useGrouping:'always'});
+const num = id => { const v = parseFloat(String($(id).value).replace(',','.')); return isFinite(v) ? v : 0; };
+const cuota = (P, tin, n) => { const r = tin/100/12; return r === 0 ? P/n : P*r/(1-Math.pow(1+r,-n)); };
+function pagos(D, tin, c){ // devuelve [meses, total pagado] con cuota fija c
+  const r = tin/100/12; let m = 0, tot = 0;
+  while (D > 0.005 && m < 1200){ const i = D*r, pay = Math.min(c, D + i); D = D + i - pay; tot += pay; m++; }
+  return [m, tot];
+}
+const ym = m => { const a = Math.floor(m/12), b = m%12; return (a ? a + (a === 1 ? ' año' : ' años') : '') + (a && b ? ' y ' : '') + (b ? b + (b === 1 ? ' mes' : ' meses') : ''); };
+function calc(){
+  const D = Math.max(0, num('deu')), años = +$('pla').value, n = años*12, tin = num('tin'), A = Math.min(Math.max(0, num('am')), D), com = A*num('com')/100;
+  $('plaO').textContent = años + ' años';
+  if (!D) return;
+  const c = cuota(D, tin, n), base = c*n;
+  $('cAct').textContent = eur2.format(c) + ' / mes';
+  const D2 = D - A;
+  const c2 = D2 > 0 ? cuota(D2, tin, n) : 0;
+  const ahC = base - c2*n - A - com;
+  const [m2, tot2] = D2 > 0 ? pagos(D2, tin, c) : [0, 0];
+  const ahP = base - tot2 - A - com;
+  $('aP').textContent = eur.format(ahP); $('nP').textContent = m2 ? ym(m2) : 'Hipoteca pagada';
+  $('aC').textContent = eur.format(ahC); $('nC').textContent = eur2.format(c2);
+  $('win').textContent = ahP >= ahC ? 'Reducir plazo' : 'Reducir cuota';
+  $('winTxt').textContent = 'Ahorras ' + eur.format(Math.abs(ahP - ahC)) + ' más en intereses que con la otra opción.';
+  $('msg').textContent = m2 ? 'Reduciendo plazo terminas ' + ym(n - m2) + ' antes. Reduciendo cuota pagas ' + eur2.format(c - c2) + ' menos al mes.' + (com ? ' Ya está descontada la comisión de ' + eur.format(com) + '.' : '') : '';
+}
+document.querySelectorAll('input').forEach(e => e.addEventListener('input', calc)); calc();
+})();
+</script>
+</main>
+<footer>
+  <div class="wrap">
+    <p><a href="./">Calculadora de hipoteca</a><a href="cuanto-me-presta-el-banco.html">¿Cuánto me presta el banco?</a><a href="gastos-compra-vivienda.html">Gastos de compra de vivienda</a><a href="amortizacion-anticipada.html">Amortización anticipada</a></p>
+    <p><a href="sobre-nosotros.html">Sobre nosotros</a><a href="contacto.html">Contacto</a><a href="aviso-legal.html">Aviso legal</a><a href="privacidad.html">Privacidad y cookies</a></p>
+    <p>Los resultados son orientativos y no constituyen una oferta ni asesoramiento financiero. © 2026 CalculaHipoteca</p>
+  </div>
+</footer>
+</body>
+</html>
